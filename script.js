@@ -18,7 +18,11 @@ document.querySelector('.check').addEventListener('click', function () {
   else if (guess === secretNum) {
     document.querySelector('.message').textContent =
       'You Guessed the Correct Number';
-  } else if (guess > secretNum) {
+    document.querySelector('body').style.backgroundColor = '#8B8000';
+  }
+
+  //If the guessed is to high
+  else if (guess > secretNum) {
     if (score > 1) {
       document.querySelector('.message').textContent =
         'The number you guessed is to high. Guess Again';
@@ -28,7 +32,10 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.message').textContent = 'You lose the game';
       document.querySelector('.score').textContent = 0;
     }
-  } else if (guess < secretNum) {
+  }
+
+  //If the guessed to low
+  else if (guess < secretNum) {
     if (score > 1) {
       document.querySelector('.message').textContent =
         'The number you guessed is to low. Guess Again';
