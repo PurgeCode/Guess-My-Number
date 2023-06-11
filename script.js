@@ -28,10 +28,12 @@ document.querySelector('.check').addEventListener('click', function () {
   // Use Ternary Operator to Identify the number is high or low
   else if (guess !== secretNum) {
     if (score > 1) {
-      document.querySelector('.message').textContent =
+      displayMessage(
         guess > secretNum
           ? 'The number you guessed is to high. Guess Again'
-          : 'The number you guessed is to low. Guess Again';
+          : 'The number you guessed is to low. Guess Again'
+      );
+
       score--;
       document.querySelector('.score').textContent = score;
     } else {
